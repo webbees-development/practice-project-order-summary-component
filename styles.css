@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* reset basic styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    min-height: 100vh;
+}
+
+/* variables */
+:root {
+    --clr-primary: hsl(225, 100%, 94%);
+    --clr-secondary: hsl(245, 75%, 52%);
+    --clr-accent: hsl(243, 77%, 65%);
+    
+    --clr-pale-blue: hsl(225, 100%, 98%);
+    --clr-desaturated-blue: hsl(224, 23%, 55%);
+    --clr-dark-blue: hsl(223, 47%, 23%);
+    --clr-white: hsl(0, 0%, 100%);
+}
+
+/* styles */
+body {
+    font-size: 16px;
+
+    background-color: var(--clr-primary);
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background: none;
+    border: none;
+
+    font-family: "Red Hat Display", sans-serif;
+    cursor: pointer;
+
+    transition: all 50ms ease-out;
+}
+
+button:focus-visible {
+    outline: none;
+}
+
+button.cancel {
+    display: block;
+
+    color: var(--clr-desaturated-blue);
+    width: 100%;
+    padding: 1rem;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+button.cancel:hover,
+button.cancel:focus-visible {
+    color: var(--clr-dark-blue);
+}
+
+button.change {
+    color: var(--clr-secondary);
+    text-decoration: underline;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+button.change:hover,
+button.change:focus-visible {
+    color: var(--clr-accent);
+    text-decoration: none;
+}
+
+button.proceed {
+    display: block;
+
+    color: var(--clr-white);
+    background-color: var(--clr-secondary);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    margin-block-end: 0.5rem;
+
+    box-shadow: 0 10px 50px -15px var(--clr-secondary);
+}
+
+button.proceed:hover,
+button.proceed:focus-visible {
+    background-color: var(--clr-accent);
+}
+
+h1 {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+
+    color: var(--clr-dark-blue);
+
+    text-align: center;
+
+    margin-block-end: 1rem;
+}
+
+h2 {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+
+    color: var(--clr-dark-blue);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+main {
+    margin: 1.5rem;
+}
+
+p {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--clr-desaturated-blue);
+
+    max-width: 25ch;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--clr-white);
+    border-radius: 1rem;
+    overflow: hidden;
+
+    max-width: 21rem;
+}
+
+.card-body {
+    padding: 2rem 1.5rem 1rem;
+}
+
+.card-body > p {
+    margin-block-end: 1.4rem;
+}
+
+.offer {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+
+    background-color: var(--clr-pale-blue);
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    margin-block-end: 1.5rem;
+}
+
+.offer > .action {
+    text-align: right;
+    flex-grow: 3;
+}
+
+@media (min-width: 35rem) {
+    body {
+        background-image: url("./images/pattern-background-desktop.svg");
+    }
+
+    button.proceed {
+        margin-block-end: 1rem;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 16px;
+
+        max-width: 30ch;
+    }
+
+    .card {
+        max-width: 30rem;
+    }
+
+    .card-body {
+        padding: 3rem 3rem 2rem;
+    }
+
+    .offer {
+        margin-block-end: 2rem;
+    } 
+}
